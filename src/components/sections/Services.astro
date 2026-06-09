@@ -15,13 +15,13 @@ const { services } = Astro.props;
         Services
       </h2>
       <p class="mt-4 text-text-secondary">
-        Clear packages, transparent pricing, no surprises.
+        Professional creative work at flat rates — no hidden fees, no surprises.
       </p>
     </div>
 
-    <div class="mt-12 grid md:grid-cols-3 gap-6 md:gap-8">
+    <div class="mt-12 grid md:grid-cols-3 gap-6 md:gap-8 reveal-stagger">
       {services.map((service) => (
-        <div class="p-6 md:p-8 rounded-xl bg-surface dark:bg-dark-surface border border-border dark:border-dark-border hover:shadow-card-hover transition-shadow duration-normal">
+        <div class="card-premium p-6 md:p-8 rounded-xl bg-surface dark:bg-dark-surface border border-border dark:border-dark-border">
           <h3 class="font-heading text-xl font-bold">
             {service.title}
           </h3>
@@ -29,7 +29,7 @@ const { services } = Astro.props;
             {service.description}
           </p>
 
-          <p class="mt-6 font-heading text-2xl font-bold text-accent">
+          <p class="mt-6 font-display text-3xl font-bold gradient-text">
             {service.price}
           </p>
           <p class="mt-1 text-sm text-text-secondary">
@@ -47,7 +47,7 @@ const { services } = Astro.props;
             ))}
           </ul>
 
-          <a href="#contact" class="mt-8 block w-full text-center px-4 py-3 border border-border dark:border-dark-border text-text rounded-lg text-sm font-medium hover:bg-surface-secondary dark:hover:bg-dark-card transition-colors duration-fast">
+          <a href="#contact" class="mt-8 block w-full text-center px-4 py-3 border border-border dark:border-dark-border text-text rounded-lg text-sm font-medium hover:bg-accent hover:text-btn-text hover:border-accent transition-all duration-fast active:scale-95">
             Book a Call
           </a>
         </div>

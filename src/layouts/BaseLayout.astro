@@ -7,7 +7,7 @@ export interface Props {
   ogImage?: string;
 }
 
-const { title, description = 'Graphic Designer & Illustrator based in Morocco — I help agencies, e-commerce brands, and startups turn ideas into compelling visuals.', ogImage = '/og-default.jpg' } = Astro.props;
+const { title, description = 'MORAD LBHAMADI — Graphic Designer & Illustrator based in Morocco. I help agencies, e-commerce brands, and startups turn ideas into compelling visuals.', ogImage = '/og-default.jpg' } = Astro.props;
 ---
 
 <!doctype html>
@@ -59,6 +59,10 @@ const { title, description = 'Graphic Designer & Illustrator based in Morocco �
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(function(el) {
+          observer.observe(el);
+        });
+
+        document.querySelectorAll('.reveal-stagger').forEach(function(el) {
           observer.observe(el);
         });
       });
