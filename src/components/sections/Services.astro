@@ -1,0 +1,57 @@
+---
+import type { Service } from '../../data/services';
+
+export interface Props {
+  services: Service[];
+}
+
+const { services } = Astro.props;
+---
+
+<section id="services" class="section bg-surface-secondary dark:bg-dark-card/50 reveal">
+  <div class="container">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="font-display text-3xl md:text-4xl font-bold">
+        Services
+      </h2>
+      <p class="mt-4 text-text-secondary">
+        Clear packages, transparent pricing, no surprises.
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-6 md:gap-8">
+      {services.map((service) => (
+        <div class="p-6 md:p-8 rounded-xl bg-surface dark:bg-dark-surface border border-border dark:border-dark-border hover:shadow-card-hover transition-shadow duration-normal">
+          <h3 class="font-heading text-xl font-bold">
+            {service.title}
+          </h3>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            {service.description}
+          </p>
+
+          <p class="mt-6 font-heading text-2xl font-bold text-accent">
+            {service.price}
+          </p>
+          <p class="mt-1 text-sm text-text-secondary">
+            {service.timeline}
+          </p>
+
+          <ul class="mt-6 space-y-3">
+            {service.features.map((feature) => (
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="mt-0.5 w-4 h-4 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <a href="#contact" class="mt-8 block w-full text-center px-4 py-3 border border-border dark:border-dark-border text-text rounded-lg text-sm font-medium hover:bg-surface-secondary dark:hover:bg-dark-card transition-colors duration-fast">
+            Book a Call
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

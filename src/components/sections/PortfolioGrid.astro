@@ -1,0 +1,41 @@
+---
+const projectFiles = Object.values(
+  import.meta.glob('../../content/projects/*.md', { eager: true })
+);
+const projects = projectFiles.sort((a, b) => b.frontmatter.year.localeCompare(a.frontmatter.year));
+---
+
+<section id="portfolio" class="section reveal">
+  <div class="container">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="font-display text-3xl md:text-4xl font-bold">
+        Featured Work
+      </h2>
+      <p class="mt-4 text-text-secondary">
+        A selection of projects I'm proud of.
+        <a href="#contact" class="text-accent hover:underline">Want to see more?</a>
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <a href={`/projects/${project.frontmatter.slug}`} class="group block rounded-xl overflow-hidden border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-card transition-shadow duration-normal hover:shadow-card-hover">
+          <div class="aspect-4/3 bg-gradient-to-br from-accent/10 to-secondary/10 dark:from-accent/5 dark:to-secondary/5 flex items-center justify-center text-text-secondary text-sm">
+            {project.frontmatter.category}
+          </div>
+          <div class="p-5">
+            <span class="text-xs uppercase tracking-wider text-accent font-medium">
+              {project.frontmatter.category}
+            </span>
+            <h3 class="mt-1 font-heading font-bold group-hover:text-accent transition-colors">
+              {project.frontmatter.title}
+            </h3>
+            <p class="mt-1 text-xs text-text-secondary">
+              {project.frontmatter.client} &middot; {project.frontmatter.year}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://businessemorad.com/sitemap-index.xml

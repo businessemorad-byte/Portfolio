@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Services from '../components/sections/Services.astro';
+import PortfolioGrid from '../components/sections/PortfolioGrid.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import Contact from '../components/sections/Contact.astro';
+import Footer from '../components/layout/Footer.astro';
+
+import { services } from '../data/services';
+import { testimonials } from '../data/testimonials';
+import { stats } from '../data/stats';
+---
+
+<BaseLayout title="Visual Design & Illustration | Portfolio">
+  <Header />
+  <main>
+    <Hero />
+    <About stats={stats} />
+    <Services services={services} />
+    <PortfolioGrid />
+    <Testimonials testimonials={testimonials} />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+export interface Props {
+  stats: { label: string; value: string | number }[];
+}
+
+const { stats } = Astro.props;
+---
+
+<section id="about" class="section reveal">
+  <div class="container">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold">
+          About Me
+        </h2>
+        <div class="mt-6 space-y-4 text-text-secondary leading-relaxed">
+          <p>
+            I'm a Graphic Designer and Illustrator based in Morocco with 7+ years of experience partnering with agencies, e-commerce brands, and startups worldwide. My work has helped clients ranging from early-stage founders to established marketing agencies communicate their message with clarity and impact.
+          </p>
+          <p>
+            What sets me apart is a design-thinking approach rooted in strategy, not just aesthetics. Every project begins with three questions: Who is your audience? What do you want them to feel? What action should they take? The answers shape every visual decision — from color palette to composition.
+          </p>
+          <p>
+            I deliver more than files. I deliver visual systems that build brand recognition, strengthen campaigns, and ultimately grow businesses. On time, on budget, and backed by clear communication throughout every stage.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6">
+        {stats.map((stat) => (
+          <div class="p-6 rounded-xl bg-surface-secondary dark:bg-dark-card border border-border dark:border-dark-border">
+            <p class="font-display text-3xl md:text-4xl font-bold text-accent">{stat.value}</p>
+            <p class="mt-1 text-sm text-text-secondary">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
