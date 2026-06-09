@@ -2,9 +2,9 @@
 import ThemeToggle from '../ui/ThemeToggle.astro';
 
 const navLinks = [
-  { label: 'Work', href: '#portfolio' },
-  { label: 'Services', href: '#services' },
   { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#portfolio' },
   { label: 'Contact', href: '#contact' },
 ];
 ---
@@ -24,7 +24,7 @@ const navLinks = [
     </nav>
 
     <div class="flex items-center gap-4">
-      <a href="#contact" class="px-4 py-2 text-sm bg-accent text-btn-text rounded-lg hover:bg-accent-hover transition-all duration-fast active:scale-95">
+      <a href="#contact" class="px-5 py-2 text-sm bg-accent text-btn-text rounded-full hover:bg-accent-hover transition-all duration-fast active:scale-95">
         Get a Quote
       </a>
       <ThemeToggle />

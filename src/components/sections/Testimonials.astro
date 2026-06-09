@@ -12,18 +12,16 @@ const { testimonials } = Astro.props;
   <div class="container">
     <div class="text-center max-w-2xl mx-auto">
       <h2 class="font-display text-3xl md:text-4xl font-bold">
-        What Clients Say
+        Trusted by
       </h2>
     </div>
 
     <div class="mt-12 grid md:grid-cols-3 gap-6 md:gap-8 reveal-stagger">
       {testimonials.map((t) => (
-        <div class="card-premium p-6 md:p-8 rounded-xl bg-surface dark:bg-dark-surface border border-border dark:border-dark-border">
-          <svg class="w-8 h-8 text-accent/30 mb-4" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-          </svg>
+        <div class="card-premium p-6 md:p-8 rounded-2xl bg-surface dark:bg-dark-surface border border-border dark:border-dark-border">
+          <div class="w-8 h-[2px] bg-gradient-to-r from-accent to-secondary rounded-full mb-5"></div>
           <p class="text-text-secondary leading-relaxed">
-            {t.content}
+            "{t.content}"
           </p>
           <div class="mt-6 pt-6 border-t border-border dark:border-dark-border">
             <p class="font-heading font-bold text-sm">{t.name}</p>
