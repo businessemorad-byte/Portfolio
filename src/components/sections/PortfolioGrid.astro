@@ -20,8 +20,14 @@ const projects = projectFiles.sort((a, b) => b.frontmatter.year.localeCompare(a.
     <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project) => (
         <a href={`/projects/${project.frontmatter.slug}`} class="group block rounded-xl overflow-hidden border border-border dark:border-dark-border bg-surface-secondary dark:bg-dark-card transition-shadow duration-normal hover:shadow-card-hover">
-          <div class="aspect-4/3 bg-gradient-to-br from-accent/10 to-secondary/10 dark:from-accent/5 dark:to-secondary/5 flex items-center justify-center text-text-secondary text-sm">
-            {project.frontmatter.category}
+          <div class="aspect-4/3 overflow-hidden">
+            <img
+              src={project.frontmatter.image}
+              alt={project.frontmatter.alt || project.frontmatter.title}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="p-5">
             <span class="text-xs uppercase tracking-wider text-accent font-medium">

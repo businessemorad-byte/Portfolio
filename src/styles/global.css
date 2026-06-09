@@ -6,20 +6,21 @@
   /* Brand */
   --color-primary: #0F172A;
   --color-primary-light: #1E293B;
-  --color-accent: #FF6B6B;
-  --color-accent-hover: #FF5252;
-  --color-secondary: #F59E0B;
-  --color-gold: #F59E0B;
+  --color-accent: #C13D3D;
+  --color-accent-hover: #B03030;
+  --color-secondary: #D4943E;
+  --color-gold: #D4943E;
+  --color-btn-text: #FFFFFF;
 
   /* Neutrals */
   --color-surface: #F8FAFC;
   --color-surface-secondary: #F1F5F9;
   --color-border: #E2E8F0;
-  --color-muted: #94A3B8;
+  --color-muted: #64748B;
   --color-text: #0F172A;
   --color-text-secondary: #475569;
 
-  /* Dark mode overrides (used via dark: variant) */
+  /* Dark mode tokens */
   --color-dark-surface: #0B1120;
   --color-dark-card: #1E293B;
   --color-dark-border: #334155;
@@ -68,6 +69,14 @@
     color: var(--color-text);
     transition: background-color var(--duration-normal) var(--ease-smooth),
                 color var(--duration-normal) var(--ease-smooth);
+  }
+
+  .dark,
+  .dark * {
+    --color-accent: #FF6B6B;
+    --color-accent-hover: #E04848;
+    --color-muted: #94A3B8;
+    --color-btn-text: #0F172A;
   }
 
   .dark body,

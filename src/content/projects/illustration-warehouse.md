@@ -5,6 +5,8 @@ year: '2024'
 client: 'The Warehouse Co.'
 role: 'Illustrator'
 slug: 'illustration-warehouse'
+image: '/images/projects/project-5.jpg'
+alt: 'The Warehouse product illustrations'
 ---
 
 A set of 40+ product illustrations for an e-commerce fashion retailer's seasonal campaign. Each piece needed to feel editorial while maintaining consistency across a diverse product range — from streetwear to formal. The illustrations replaced traditional photography for the campaign.

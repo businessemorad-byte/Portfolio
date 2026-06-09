@@ -21,8 +21,17 @@ const seoDescription = `${frontmatter.title} — A ${frontmatter.category.toLowe
 <BaseLayout title={`${frontmatter.title} | Portfolio`} description={seoDescription}>
   <Header />
   <main class="section">
-    <article class="container max-w-3xl">
-      <div class="mb-8">
+    <article class="container max-w-4xl">
+      {frontmatter.image && (
+        <img
+          src={frontmatter.image}
+          alt={frontmatter.alt || frontmatter.title}
+          class="w-full rounded-xl mb-10 aspect-2/1 object-cover"
+          decoding="async"
+        />
+      )}
+
+      <div class="max-w-3xl mx-auto">
         <p class="text-sm tracking-widest uppercase text-accent font-medium">
           {frontmatter.category}
         </p>
@@ -36,12 +45,14 @@ const seoDescription = `${frontmatter.title} — A ${frontmatter.category.toLowe
         </div>
       </div>
 
-      <div class="prose prose-gray dark:prose-invert max-w-none">
-        <Content />
-      </div>
+      <div class="max-w-3xl mx-auto mt-10">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+          <Content />
+        </div>
 
-      <div class="mt-12 pt-8 border-t border-border dark:border-dark-border">
-        <a href="/#portfolio" class="text-accent hover:underline">&larr; Back to portfolio</a>
+        <div class="mt-12 pt-8 border-t border-border dark:border-dark-border">
+          <a href="/#portfolio" class="text-accent hover:underline">&larr; Back to portfolio</a>
+        </div>
       </div>
     </article>
   </main>

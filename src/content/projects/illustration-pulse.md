@@ -5,6 +5,8 @@ year: '2025'
 client: 'Pulse Technologies'
 role: 'Illustrator'
 slug: 'illustration-pulse'
+image: '/images/projects/project-2.jpg'
+alt: 'Pulse Technologies campaign illustrations'
 ---
 
 A series of custom illustrations for Pulse's Series A pitch deck, website, and launch campaign. The goal was to make complex fintech concepts feel accessible and human — turning abstract data flows into visual stories investors and users could connect with instantly.

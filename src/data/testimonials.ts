@@ -18,7 +18,7 @@ export const testimonials: Testimonial[] = [
     id: 't2',
     name: 'Omar Hassan',
     role: 'Founder',
-    company: 'Noor E-Commerce',
+    company: 'AUREA BATH',
     content: 'The rebrand transformed how our customers perceive us. We saw a measurable uplift in brand recall and engagement within weeks of launching the new visuals. The process was smooth, communicative, and completely stress-free on our end.',
   },
   {
