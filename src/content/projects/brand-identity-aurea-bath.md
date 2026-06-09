@@ -4,9 +4,9 @@ category: 'Brand Identity'
 year: '2025'
 client: 'AUREA BATH'
 role: 'Visual Designer & Illustrator'
-slug: 'brand-identity-aurea-bath'
+slug: 'aurea-bath-identity'
 image: '/images/projects/project-1.jpg'
-alt: 'AUREA BATH brand identity showcase'
+alt: 'AUREA BATH brand identity system'
 ---
 
 A complete brand identity for a luxury bath and body e-commerce boutique. The brief called for a visual system that felt premium yet approachable — trustworthy enough for high-value purchases, warm enough to feel personal.

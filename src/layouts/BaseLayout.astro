@@ -7,7 +7,7 @@ export interface Props {
   ogImage?: string;
 }
 
-const { title, description = 'MORAD LBHAMADI — Graphic Designer & Illustrator based in Morocco. I help agencies, e-commerce brands, and startups turn ideas into compelling visuals.', ogImage = '/og-default.jpg' } = Astro.props;
+const { title, description = 'MORAD LBOUHMADI — Graphic Designer & Illustrator based in Morocco. I help agencies, e-commerce brands, and startups turn ideas into compelling visuals.', ogImage = '/og-default.jpg' } = Astro.props;
 ---
 
 <!doctype html>
@@ -47,6 +47,8 @@ const { title, description = 'MORAD LBHAMADI — Graphic Designer & Illustrator 
   </head>
   <body>
     <slot />
+    <div id="cursor-glow" aria-hidden="true"></div>
+
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var observer = new IntersectionObserver(function(entries) {
@@ -58,12 +60,28 @@ const { title, description = 'MORAD LBHAMADI — Graphic Designer & Illustrator 
           }
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.reveal').forEach(function(el) {
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el) {
           observer.observe(el);
         });
 
-        document.querySelectorAll('.reveal-stagger').forEach(function(el) {
-          observer.observe(el);
+        // Cursor glow
+        var glow = document.getElementById('cursor-glow');
+        var ticking = false;
+        var mouseX = 0, mouseY = 0;
+        var currentX = 0, currentY = 0;
+
+        document.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              currentX += (mouseX - currentX) * 0.08;
+              currentY += (mouseY - currentY) * 0.08;
+              glow.style.transform = 'translate(' + currentX + 'px, ' + currentY + 'px)';
+              ticking = false;
+            });
+            ticking = true;
+          }
         });
       });
     </script>
